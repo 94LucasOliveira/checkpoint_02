@@ -31,7 +31,6 @@ def menu():
                 idx = int(input("Digite o número da tarefa para EXCLUIR: "))
             except ValueError:
                 print("Por favor, digite um número válido.")
-            break
         elif opcao == "5":
             print("Saindo...")
             break
