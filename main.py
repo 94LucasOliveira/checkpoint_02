@@ -29,6 +29,7 @@ def menu():
             listar_tarefas()
             try:
                 idx = int(input("Digite o número da tarefa para EXCLUIR: "))
+                excluir_tarefa(idx)
             except ValueError:
                 print("Por favor, digite um número válido.")
         elif opcao == "5":
