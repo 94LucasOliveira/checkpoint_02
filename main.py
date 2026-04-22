@@ -1,5 +1,5 @@
 # main.py
-from tarefas import adicionar_tarefa, listar_tarefas, concluir_tarefa, carregar_dados
+from tarefas import adicionar_tarefa, listar_tarefas, concluir_tarefa, carregar_dados, excluir_tarefa
 
 def menu():
     carregar_dados()
@@ -8,8 +8,9 @@ def menu():
         print("1. Adicionar Tarefa")
         print("2. Listar Tarefas")
         print("3. Concluir Tarefa")
-        print("4. Sair")
-        
+        print("4. Excluir Tarefa")
+        print("5. Sair")
+
         opcao = input("Escolha uma opção: ")
         
         if opcao == "1":
@@ -25,6 +26,13 @@ def menu():
             except ValueError:
                 print("Por favor, digite um número válido.")
         elif opcao == "4":
+            listar_tarefas()
+            try:
+                idx = int(input("Digite o número da tarefa para EXCLUIR: "))
+            except ValueError:
+                print("Por favor, digite um número válido.")
+            break
+        elif opcao == "5":
             print("Saindo...")
             break
         else:

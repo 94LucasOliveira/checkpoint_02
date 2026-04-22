@@ -66,3 +66,13 @@ def carregar_dados():
             lista_tarefas = json.load(f)
     except FileNotFoundError:
         lista_tarefas = []
+
+def excluir_tarefa(indice):
+    try:
+        # O método .pop(indice) remove o item da lista naquela posição
+        tarefa_removida = lista_tarefas.pop(indice)
+        salvar_dados()
+        print(f"Tarefa '{tarefa_removida['descricao']}' excluída com sucesso!")
+    except IndexError:
+        print("Erro: Índice da tarefa inválido! Não foi possível excluir.")
+
